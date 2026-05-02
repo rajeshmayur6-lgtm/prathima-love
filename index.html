@@ -1,20 +1,95 @@
-<!DOCTYPE html>
-<html>
+ <!DOCTYPE html>
+<html lang="en">
 <head>
-  <title>Prathima ❤️</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prathima ❤️</title>
+
+<style>
+
+body{
+margin:0;
+overflow:hidden;
+font-family:Arial;
+background:linear-gradient(to bottom,#ff4d88,#ff99bb);
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+}
+
+h1{
+color:white;
+font-size:40px;
+text-shadow:0 0 10px black;
+}
+
+p{
+color:white;
+font-size:20px;
+}
+
+.photo{
+width:250px;
+height:250px;
+border-radius:50%;
+object-fit:cover;
+border:5px solid white;
+box-shadow:0 0 30px rgba(255,255,255,0.8);
+margin-top:20px;
+}
+
+.heart{
+position:absolute;
+top:-10px;
+animation:fall linear infinite;
+}
+
+@keyframes fall{
+to{
+transform:translateY(110vh);
+}
+}
+
+</style>
 </head>
 
 <body>
 
-<header>
-  <h1>I Love You Prathima ❤️</h1>
-  <p>You are my favorite person 🌸</p>
-</header>
+<h1>I Love You Prathima ❤️</h1>
 
-<section class="hero">
-  <img src="https://picsum.photos/400">
-</section>
+<p>You are my favorite person 🌸</p>
+
+<img src="prathima.jpg" class="photo">
+
+<script>
+
+function createHeart(){
+
+const heart=document.createElement('div');
+
+heart.className='heart';
+
+heart.innerHTML='❤️';
+
+heart.style.left=Math.random()*100+'vw';
+
+heart.style.fontSize=(Math.random()*20+20)+'px';
+
+heart.style.animationDuration=(Math.random()*3+2)+'s';
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},5000);
+
+}
+
+setInterval(createHeart,300);
+
+</script>
 
 </body>
 </html>
